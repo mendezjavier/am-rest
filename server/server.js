@@ -1,7 +1,6 @@
-// require('./config/config');
+require('./config/config');
 const express = require('express');
 const bodyParser = require('body-parser');
-const path = require('path');
 
 const app = express();
 app.use(function(req, res, next) {
@@ -20,11 +19,8 @@ app.use(bodyParser.json());
 app.use(require('./routes/index'));
 
 // Habilitar public
-// app.use(express.static(path.resolve(__dirname, '../public')));
 app.use('/', express.static(__dirname + '/public'));
-// app.get('/', function(req, res, next) {
-//   res.status(200).sendFile(path.join(__dirname+'/public/index.html')); 
-// });
+
 const port = process.env.PORT || 3000;
 
 

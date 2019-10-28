@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-// const _ = require('underscore');
 const data = require('../data/data.json');
 const fs = require('fs');
 const path = require('path');
